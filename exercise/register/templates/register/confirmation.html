@@ -1,0 +1,27 @@
+{% extends 'register/base.html' %}
+
+{% block content %}
+
+    {% if person_list %}
+    <h1>Results</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Title</th>
+                <th>Hometown</th>
+            </tr>
+        {% for person in person_list %}
+            <tr>
+                <td>{{ person.name }}</td>
+                <td>{{ person.age }}</td>
+                <td>{{ person.title }}</td>
+                <td>{{ person.hometown }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% else %}
+        <p>No people returned.</p>
+    {% endif %}
+
+{% endblock %}

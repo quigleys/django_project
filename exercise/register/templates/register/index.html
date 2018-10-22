@@ -1,0 +1,10 @@
+{% extends 'register/base.html' %}
+
+{% block content %}
+    <h1>New Person</h1>
+    <form action="{% url 'register:index' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
