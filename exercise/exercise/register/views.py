@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
 
@@ -10,9 +10,9 @@ def index(request):
     if request.method == "POST":
         form = PersonForm(request.POST)
         if form.is_valid():
-            person = form.save(commit=False)
+            person = form.save()
             person.save()
-            return redirect('register/confirmation', pk=pk.id)
+            return redirect('register:confirmation', pk=person.pk)
     else:
         form = PersonForm()
     return render(request, 'register/index.html', {'form': form})
