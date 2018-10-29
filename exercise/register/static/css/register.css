@@ -30,6 +30,24 @@ h1, h2, h3, h4 {
     width: 100%;
 }
 
+ul, menu, dir {
+    display: table;
+    list-style-type: none;
+    margin-left: 5em;
+}
+
+.name {
+    font-weight: bold;
+    padding: .2em;
+}
+
+li {
+    padding: .5em;
+}
+
+.person {
+    list-style-type: none;
+}
 
 .register {
     margin-bottom: 70px;

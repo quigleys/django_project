@@ -2,6 +2,17 @@
 
 {% block content %}
 
+    {% if person %}
+    <h1>Submission Confirmation</h1>
+        <ul>
+            <li class="name">{{ person.name }}</li>
+            <li>Age:&nbsp;{{ person.age }}</li>
+            <li>Title:&nbsp;{{ person.title }}</li>
+            <li>Hometown:&nbsp;{{ person.hometown }}</li>
+        </ul>
+    {% else %}
+        <p>No person returned.</p>
+    {% endif %}
     {% if person_list %}
     <h1>Results</h1>
         <table>
@@ -23,5 +34,4 @@
     {% else %}
         <p>No people returned.</p>
     {% endif %}
-
 {% endblock %}
